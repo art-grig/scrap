@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upsert Scrap Model</title>
+</head>
+<body>
+
+<div>
+    <h1>{{ 'Edit' if scrap_model else 'Create' }} Scrap Model</h1>
+
+    <form method="post" action="{{ url_for('create_or_edit_scrap_model') }}">
+        <label for="scrap_code">Template Id:</label>
+        <input id="scrap_template_id" name="scrap_template_id" value="{{ scrap_model.TemplateId if scrap_model else '' }}" required>
+        <br>
+        <label for="scrap_code">Scrap Code:</label>
+        <textarea id="scrap_code" name="scrap_code" rows="4" cols="50" required>{{ scrap_model.ScrapCode if scrap_model else '' }}</textarea>
+        <br>
+        <label for="scrap_params_html">Scrap Params HTML:</label>
+        <textarea id="scrap_params_html" name="scrap_params_html" rows="4" cols="50" required>{{ scrap_model.ScrapParamsHtml if scrap_model else '' }}</textarea>
+        <br>
+        <button type="submit">{{ 'Update' if scrap_model else 'Create' }} Scrap Model</button>
+    </form>
+</div>
+
+</body>
+</html>

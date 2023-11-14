@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Scrap Models</title>
+</head>
+<body>
+
+<div>
+    <h1>Scrap Models</h1>
+
+    {% if scrap_models %}
+        <ul>
+            {% for scrap_model in scrap_models %}
+                <li>
+                    <strong>TemplateId:</strong> {{ scrap_model.TemplateId }}<br>
+                    <strong>Scrap Code:</strong>
+                    <textarea rows="4" cols="50" readonly>{{ scrap_model.ScrapCode }}</textarea><br>
+                    <strong>Scrap Params HTML:</strong>
+                    <textarea rows="4" cols="50" readonly>{{ scrap_model.ScrapParamsHtml }}</textarea>
+                </li>
+                <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Scrap Models found in the cache.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap</title>
+</head>
+<body>
+
+<div>
+    <h1>Scrap Params</h1>
+
+    <form method="post" action="/scrap?templateId={{scrap_model_instance.TemplateId}}">
+        <!-- Injected ScrapParamsHtml form -->
+        {{ scrap_model_instance.ScrapParamsHtml | safe }}
+
+        <!-- Additional form fields can be added here if needed -->
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
